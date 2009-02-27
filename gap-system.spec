@@ -16,10 +16,7 @@ Group:		Sciences/Mathematics
 Source0:	ftp://ftp.gap-system.org/pub/gap/gap44/tar.bz2/gap4r4p12.tar.bz2
 
 # Alnut requires kant (http://www.math.tu-berlin.de/~kant/kash.html)
-# HAPcryst requires polymake (http://www.math.tu-berlin.de/polymake/)
-# linboxing requires LinBox (http://www.linalg.org/) with version >= 1.1.5
 # OpenMath (External needs: This package can be useful only with other applications that support OpenMath)
-# polymaking requires polymake (http://www.math.tu-berlin.de/polymake/)
 # singular requires singular (http://www.singular.uni-kl.de/)
 Source1:	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/packages-2009_02_18-11_42_UTC.tar.bz2
 
@@ -31,7 +28,6 @@ BuildRequires:	libgmp-devel
 BuildRequires:	libncurses-devel
 BuildRequires:	libxaw-devel
 BuildRequires:	p2c-devel
-BuildRequires:	/usr/bin/latex
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -56,6 +52,8 @@ Requires:	tk
 Requires:	curl
 Requires:	graphviz
 Requires:	evince
+Requires:	linalg-linbox
+Requires:	polymake
 
 %description	packages
 Since 1992, sets of user contributed programs, called packages, have
@@ -129,7 +127,7 @@ pushd pkg
 
   pushd Browse
     %{pkg_configure}
-    make default manual
+    make default
   popd
 
 # FIXME this most likely will generate incorrect binaries, as
