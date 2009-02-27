@@ -28,6 +28,7 @@ BuildRequires:	libgmp-devel
 BuildRequires:	libncurses-devel
 BuildRequires:	libxaw-devel
 BuildRequires:	p2c-devel
+BuildRequires:	gcc-gfortran
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -195,6 +196,9 @@ pushd pkg
 
   pushd grape
     %{pkg_configure}
+    perl -pi							\
+	-e 's|g77|gfortran|;'					\
+	src/Makefile
     make binaries others
   popd
 
