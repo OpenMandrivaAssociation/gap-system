@@ -7,7 +7,7 @@
 Name:		gap-system
 Summary:	GAP is a system for computational discrete algebra
 Version:	4.4.12
-Release:	%mkrel 1
+Release:	%mkrel 2
 
 # FIXME: check gap4r4/pkg/openmath/OMCv1.3c/src/copyright
 # used in the opemath package, and linked statically
@@ -55,6 +55,7 @@ Requires:	graphviz
 Requires:	evince
 Requires:	linalg-linbox
 Requires:	polymake
+Requires:	singular
 
 %description	packages
 Since 1992, sets of user contributed programs, called packages, have
