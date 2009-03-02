@@ -45,7 +45,7 @@ studying groups and their representations, rings, vector spaces,
 algebras, combinatorial structures, and more.
 
 %package	packages
-Group:		Science/Mathematics
+Group:		Sciences/Mathematics
 Summary:	Optional gap packages
 Requires:	%{name}
 Requires:	tcl
