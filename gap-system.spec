@@ -7,7 +7,7 @@
 Name:		gap-system
 Summary:	GAP is a system for computational discrete algebra
 Version:	4.4.12
-Release:	%mkrel 2
+Release:	%mkrel 3
 
 # FIXME: check gap4r4/pkg/openmath/OMCv1.3c/src/copyright
 # used in the opemath package, and linked statically
@@ -223,7 +223,7 @@ pushd pkg
     %{pkg_configure}
     # Don't attempt to copy config.h to itself...
     perl -pi							\
-	-e 's|(^\s+)(cp \$\(GAPPATH\)/bin/i386)|$1#$2|;'	\
+	-e 's|(^\s+)(cp \$\(GAPPATH\)/bin/%{_arch})|$1#$2|;'	\
 	Makefile
     # "make doc" needs some tweaking, (but no need to remake?)
     make
