@@ -7,7 +7,7 @@
 Name:		gap-system
 Summary:	GAP is a system for computational discrete algebra
 Version:	4.4.12
-Release:	%mkrel 3
+Release:	%mkrel 4
 
 # FIXME: check gap4r4/pkg/openmath/OMCv1.3c/src/copyright
 # used in the opemath package, and linked statically
@@ -33,6 +33,14 @@ BuildRequires:	gcc-gfortran
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Patch0:		gap-Werror=format-security.patch
+
+# When the xgap package is installed, and enabled if the -p option
+# is used, the autoload of xgap wants to talk to xgap, what causes
+# major problems with sagemath, that also uses option -p to have
+# gap "behaving" in a simplified pipe mode.
+# With this patch, the xgap command still works, as the package
+# will then be loaded due to being a "required" package.
+Patch1:		gap-dont-autoload-xgap.patch
 
 %description
 GAP is a system for computational discrete algebra, with particular
@@ -83,6 +91,7 @@ pushd pkg
 popd
 
 %patch0	-p1
+%patch1	-p1
 
 %build
 # remove cygwin binaries
@@ -94,6 +103,8 @@ perl -pi							\
 	-e 's|\@gapdir\@|%{gapdir}|;'				\
 	Makefile.in gap.shi sysinfo.in
 
+# rpm build wants configure.in in current directory
+ln -s cnf/configure.in .
 %configure
 %make
 
