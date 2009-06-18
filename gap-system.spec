@@ -7,7 +7,7 @@
 Name:		gap-system
 Summary:	GAP is a system for computational discrete algebra
 Version:	4.4.12
-Release:	%mkrel 4
+Release:	%mkrel 5
 
 # FIXME: check gap4r4/pkg/openmath/OMCv1.3c/src/copyright
 # used in the opemath package, and linked statically
@@ -361,7 +361,7 @@ cp -far bin/leon %{buildroot}/%{gapdir}/bin
 
 # etc
 mkdir -p %{buildroot}/%{_datadir}/emacs/site-lisp
-cp -fa etc/emacs/* %{buildroot}/%{_datadir}/emacs/site-lisp
+cp -fa etc/emacs/gap-* %{buildroot}/%{_datadir}/emacs/site-lisp
 mkdir -p %{buildroot}/%{_datadir}/vim/indent
 cp -fa etc/gap_indent.vim %{buildroot}/%{_datadir}/vim/indent
 mkdir -p %{buildroot}/%{_datadir}/vim/syntax
