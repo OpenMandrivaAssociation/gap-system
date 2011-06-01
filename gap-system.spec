@@ -7,7 +7,7 @@
 Name:		gap-system
 Summary:	GAP is a system for computational discrete algebra
 Version:	4.4.12
-Release:	%mkrel 9
+Release:	%mkrel 10
 
 # FIXME: check gap4r4/pkg/openmath/OMCv1.3c/src/copyright
 # used in the opemath package, and linked statically
@@ -43,6 +43,7 @@ Patch0:		gap-Werror=format-security.patch
 Patch1:		gap-dont-autoload-xgap.patch
 
 Patch2:		gap-xgap-64bit.patch
+Patch3:		gap-sagemath.patch
 
 %description
 GAP is a system for computational discrete algebra, with particular
@@ -95,6 +96,7 @@ popd
 %patch0	-p1
 %patch1	-p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 # remove cygwin binaries
