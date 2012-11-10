@@ -1,0 +1,74 @@
+diff -p -up gap4r4/pkg/grape/nauty22/gtools.c.orig gap4r4/pkg/grape/nauty22/gtools.c
+--- gap4r4/pkg/grape/nauty22/gtools.c.orig	2009-02-21 23:30:50.000000000 -0300
++++ gap4r4/pkg/grape/nauty22/gtools.c	2009-02-21 23:30:59.000000000 -0300
+@@ -820,7 +820,7 @@ writerange(FILE *f, int c, long lo, long
+ void
+ gt_abort(char *msg)     /* Write message and halt. */
+ {
+-	if (msg) fprintf(stderr,msg);
++	if (msg) fprintf(stderr,"%s",msg);
+ 	ABORT(">E gtools");
+ }
+ 
+diff -p -up gap4r4/pkg/grape/nauty22/listg.c.orig gap4r4/pkg/grape/nauty22/listg.c
+--- gap4r4/pkg/grape/nauty22/listg.c.orig	2009-02-21 23:35:26.000000000 -0300
++++ gap4r4/pkg/grape/nauty22/listg.c	2009-02-21 23:35:57.000000000 -0300
+@@ -167,10 +167,10 @@ int linelength,m,n;
+ 		    curlen += 2;
+ 		}
+ 		curlen += itos(i+labelorg,s);
+-		fprintf(f,s);
++		fprintf(f,"%s",s);
+ 		fprintf(f," ");
+ 		curlen += 1 + itos(j+labelorg,s);
+-		fprintf(f,s);
++		fprintf(f,"%s",s);
+ 	    }
+ 	}
+ 	fprintf(f,"\n");
+diff -p -up gap4r4/pkg/grape/nauty22/testg.c.orig gap4r4/pkg/grape/nauty22/testg.c
+--- gap4r4/pkg/grape/nauty22/testg.c.orig	2009-02-21 23:40:21.000000000 -0300
++++ gap4r4/pkg/grape/nauty22/testg.c	2009-02-21 23:40:47.000000000 -0300
+@@ -338,7 +338,7 @@ printthesevals(FILE *f)
+             if (VALTYPE(ki) == BOOLTYPE)
+ 	    {
+                 if (!VAL(ki)) fprintf(f,"not %s",ID(ki));
+-                else          fprintf(f,ID(ki));
++                else          fprintf(f,"%s",ID(ki));
+ 	    }
+ 	    else if (VALTYPE(ki) == GROUPSIZE)
+ 	    {
+@@ -365,7 +365,7 @@ printkeyvals(FILE *f, long *val)
+ 	    if (VALTYPE(ki) == BOOLTYPE)
+ 	    {
+ 		if (!val[i]) fprintf(f,"not %s",ID(ki));
+-		else         fprintf(f,ID(ki));
++		else         fprintf(f,"%s",ID(ki));
+ 	    }
+ 	    else if (VALTYPE(ki) == GROUPSIZE)
+ 	    {
+diff -p -up gap4r4/pkg/grape/nauty22/showg.c.orig gap4r4/pkg/grape/nauty22/showg.c
+--- gap4r4/pkg/grape/nauty22/showg.c.orig	2009-02-22 02:35:57.000000000 -0300
++++ gap4r4/pkg/grape/nauty22/showg.c	2009-02-22 02:36:55.000000000 -0300
+@@ -189,7 +189,7 @@ static void
+ gt_abort(msg)     /* Write message and halt. */
+ char *msg;
+ {
+-	if (msg) fprintf(stderr,msg);
++	if (msg) fprintf(stderr,"%s",msg);
+ 	ABORT(">E gtools");
+ }
+ 
+@@ -923,10 +923,10 @@ int linelength,m,n;
+ 		    curlen += 2;
+ 		}
+ 		curlen += itos(i+labelorg,s);
+-		fprintf(f,s);
++		fprintf(f,"%s",s);
+ 		fprintf(f," ");
+ 		curlen += 1 + itos(j+labelorg,s);
+-		fprintf(f,s);
++		fprintf(f,"%s",s);
+ 	    }
+ 	}
+ 	fprintf(f,"\n");

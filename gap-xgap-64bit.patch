@@ -1,0 +1,11 @@
+--- gap4r4/pkg/xgap/src.x11/xgap.c.orig	2011-04-25 11:29:26.546546026 -0300
++++ gap4r4/pkg/xgap/src.x11/xgap.c	2011-04-25 11:29:42.113610072 -0300
+@@ -1077,7 +1077,7 @@ int main ( argc,  argv )
+     /* create a new top level shell and an applictation context */
+     XGap = XtVaAppInitialize( &AppContext, "XGap",
+ 			      CommandOptions, XtNumber(CommandOptions),
+-			      &i, argv, FallbackResources, 0 );
++			      &i, argv, FallbackResources, NULL );
+     for ( j = len;  j <= argc;  j++ ) {
+ 	argv[i+(j-len)] = argv[j];
+     }
