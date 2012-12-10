@@ -1,0 +1,86 @@
+!! initially, an almost verbatim copy of the fallback resources
+*menu.line.height:			10
+!*xgapMenu*shapeStyle:			Oval
+!*xgapDialog*shapeStyle:		Oval
+*xgapTalk.height:			600
+*xgapTalk.width:			600
+*xgapMenu.showGrip:			False
+*xgapTalk.showGrip:			False
+*xgapTalk.quitGapCtrD:			True
+*xgapTalk.pasteGapPrompt:		True
+*xgapMenu.gapButton.label:		GAP
+*xgapMenu.gapButton*pastePrompt.label:	Paste 'gap>'
+*xgapMenu.gapButton*quitGapCTRD.label:	Quit on CTR-D
+*xgapMenu.gapButton*editFile.label:	Edit File ...
+*xgapMenu.gapButton*readFile.label:	Read File ...
+*xgapMenu.gapButton*changeLib.label:	Change Library ...
+*xgapMenu.gapButton*resyncGap.label:	Resync with GAP
+*xgapMenu.gapButton*quit.label:	Quit GAP
+*xgapMenu.gapButton*kill.label:	Kill GAP
+*xgapMenu.runButton.label:		Run
+*xgapMenu.runButton*quitBreak.label:	Leave Breakloop
+*xgapMenu.runButton*contBreak.label:	Continue Execution
+*xgapMenu.runButton*interrupt.label:	Interrupt
+*xgapMenu.runButton*garbColl.label:	Collect Garbage
+*xgapMenu.runButton*garbMesg.label:	Toggle GC Messages
+*xgapMenu.runButton*infoRead.label:	Toggle Library Read Mesg
+*xgapMenu.helpButton.label:		Help
+*xgapMenu.helpButton*copyHelp.label:	Copyright
+*xgapMenu.helpButton*helpHelp.label:	Helpsystem
+*xgapMenu.helpButton*chpsHelp.label:	Chapters
+*xgapMenu.helpButton*secsHelp.label:	Sections
+*xgapMenu.helpButton*nchpHelp.label:	Next Chapter
+*xgapMenu.helpButton*pchpHelp.label:	Previous Chapter
+*xgapMenu.helpButton*nextHelp.label:	Next Help Section
+*xgapMenu.helpButton*prevHelp.label:	Previous Help Section
+*xgapWindowViewport.width:		800
+*xgapWindowViewport.height:		600
+*queryFileName.xgapDialog.icon:	Term
+!*selFileCancel*ShapeStyle:		Oval
+*selFileCancel*label:			Cancel
+!*selFileOK*ShapeStyle:			Oval
+*selFileOK*label:			OK
+!*selFileHome*ShapeStyle:		Oval
+*selFileHome*label:			Home
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! some custom resources
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*international:				False
+
+*Background:				gray85
+*Foreground:				gray15
+*BorderWidth:				0
+*BorderColor:				gray40
+
+*GapText.Background:			gray95
+*GapText.displayList:			foreground gray70;segments 0,-1,-1,-1,0,0,-1,0
+
+*GapGraphic.background:			gray95
+
+*SimpleMenu.BorderWidth:		0
+*SimpleMenu.VerticalMargins:		3
+*SimpleMenu.HorizontalMargins:		3
+*SimpleMenu.*.foreground:		gray20
+*SimpleMenu*displayList:		foreground gray70;lines +2,-2,-2,-2,-2,+2;foreground gray95;lines -2,+1,+1,+1,+1,-2;foreground gray30;lines +1,-1,-1,-1,-1,+1;foreground gray80;lines -1,+0,+0,+0,+0,-1
+*SimpleMenu.SmeBSB.HorizontalMargins:	16
+
+*Box.BorderWidth:			0
+*Box.displayList:			foreground gray30;lines +1,-1,-1,-1,-1,+1;foreground gray95;lines -1,+0,+0,+0,+0,-1
+
+*Scrollbar.foreground:			rgb:6/b/f
+*Scrollbar.displayList:			foreground gray70;lines +1,-1,-1,-1,-1,+1;foreground gray40;lines -1,+0,+0,+0,+0,-1
+
+*Paned.internalBorderWidth:		0
+
+*xgapWindowText.displayList:		foreground gray30;line 0,-1,-1,-1
+
+*internalHeight:			3
+*internalWidth:				6
+*Command.borderWidth:			1
+
+*Text.background:			gray95
+*Text.displayList:			foreground gray70;lines +1,-1,-1,-1,-1,+1;foreground gray40;lines		-1,+0,+0,+0,+0,-1
+
+*Composite.borderWidth:			1

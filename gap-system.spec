@@ -7,7 +7,7 @@
 Name:		gap-system
 Summary:	GAP is a system for computational discrete algebra
 Version:	4.4.12
-Release:	%mkrel 10
+Release:	11
 
 # FIXME: check gap4r4/pkg/openmath/OMCv1.3c/src/copyright
 # used in the opemath package, and linked statically
@@ -22,15 +22,15 @@ Source1:	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/packages-2009_02_18-11_42
 
 Source2:	XGap
 
+Source10:	%{name}.rpmlintrc
+
 URL:		http://www.gap-system.org
 
-BuildRequires:	libgmp-devel
-BuildRequires:	libncurses-devel
-BuildRequires:	libxaw-devel
+BuildRequires:	gmp-devel
+BuildRequires:	pkgconfig(ncurses)
+BuildRequires:	pkgconfig(xaw7)
 BuildRequires:	p2c-devel
 BuildRequires:	gcc-gfortran
-
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Patch0:		gap-Werror=format-security.patch
 
@@ -408,12 +408,7 @@ cp -fa %{SOURCE2} %{buildroot}/%{_datadir}/X11/app-defaults
 mkdir -p %{buildroot}/%{gapdir}/src
 cp -far src/* %{buildroot}/%{gapdir}/src
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
-%doc doc/*
 %{_bindir}/gap
 %{_bindir}/gap4
 %{_datadir}/emacs/site-lisp/*
@@ -510,12 +505,9 @@ rm -rf %{buildroot}
 %{gapprgdir}/wtdist
 
 %files		packages
-%defattr(-,root,root)
 %{_bindir}/xgap
 %{_bindir}/pargap
-%doc %{_docdir}/%{name}/pkg/README.*
-%doc %{_docdir}/%{name}/pkg/*/doc
-%doc %{_docdir}/%{name}/pkg/*/htm
+%doc %{_docdir}/%{name}/pkg
 %{gapdir}/procgroup
 %{gapprgdir}/Add
 %{gapprgdir}/Aut_grp
@@ -600,7 +592,6 @@ rm -rf %{buildroot}
 %{gapprgdir}/ace
 %{gapprgdir}/autcos
 %{gapprgdir}/autgroup
-%{gapprgdir}/bool.o
 %{gapprgdir}/calcpres.gap
 %{gapprgdir}/cohomology.gap
 %{gapprgdir}/coladjg4t
@@ -616,7 +607,6 @@ rm -rf %{buildroot}
 %{gapprgdir}/enum4ca
 %{gapprgdir}/execcmd.gap
 %{gapprgdir}/extprun
-%{gapprgdir}/float.o
 %{gapprgdir}/fplsa4
 %{gapprgdir}/fsaand
 %{gapprgdir}/fsaandnot
@@ -636,7 +626,6 @@ rm -rf %{buildroot}
 %{gapprgdir}/fsareverse
 %{gapprgdir}/fsastar
 %{gapprgdir}/fsaswapcoords
-%{gapprgdir}/gap
 %{gapprgdir}/gap4todr
 %{gapprgdir}/gapmpi.o
 %{gapprgdir}/gpaxioms
@@ -667,7 +656,6 @@ rm -rf %{buildroot}
 %{gapprgdir}/grrun
 %{gapprgdir}/hello
 %{gapprgdir}/io.so
-%{gapprgdir}/iostream.o
 %{gapprgdir}/kbprog
 %{gapprgdir}/kbprogcos
 %{gapprgdir}/libmpi.a
@@ -770,3 +758,4 @@ rm -rf %{buildroot}
 %{gappkgdir}/xgap
 %{_datadir}/X11/app-defaults/XGap
 %{gappkgdir}/xmod
+

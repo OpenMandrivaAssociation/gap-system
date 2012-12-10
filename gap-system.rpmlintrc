@@ -1,0 +1,5 @@
+# Permissions should be like that, not a error
+addFilter("E: world-writable")
+addFilter("E: zero-length")
+addFilter("E: version-control-internal-file")
+addFilter("E: shared-lib-without-dependency-information")
