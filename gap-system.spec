@@ -24,7 +24,7 @@ Source2:	XGap
 
 Source10:	%{name}.rpmlintrc
 
-URL:		http://www.gap-system.org
+URL:		https://www.gap-system.org
 
 BuildRequires:	gmp-devel
 BuildRequires:	pkgconfig(ncurses)
