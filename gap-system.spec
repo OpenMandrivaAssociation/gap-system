@@ -26,6 +26,11 @@ Source10:	%{name}.rpmlintrc
 
 URL:		https://www.gap-system.org
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gmp-devel
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(xaw7)
